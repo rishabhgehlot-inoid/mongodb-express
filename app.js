@@ -3,10 +3,10 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-require('dotenv').config();
+require("dotenv").config();
 
 var indexRouter = require("./routes/index");
-var port = 3000;
+var port = process.env.PORT || 5000;
 var app = express();
 const mongoose = require("mongoose");
 
