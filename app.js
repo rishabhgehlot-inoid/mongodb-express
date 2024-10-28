@@ -4,10 +4,11 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 require("dotenv").config();
-
+var cors = require('cors')
 var indexRouter = require("./routes/index");
 var port = process.env.PORT || 5000;
 var app = express();
+app.use(cors())
 const mongoose = require("mongoose");
 
 mongoose
@@ -18,6 +19,7 @@ mongoose
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+
 
 app.use(logger("dev"));
 app.use(express.json());
